@@ -1,9 +1,20 @@
-const calculadora = (velocidade, ovo, incubadora, tempoDiario) => { //incubadora = 1 ou super = 0,667
-  let dias = ~~((ovo*incubadora/velocidade)/(tempoDiario/60));
-  return dias
-};
+// const pokemonmap = listapokemon.filter(x => x.egg === "2 km");
+// const banana = pokemonmap.map(y => y.name + y.egg + `<img src="${y.img}"/>`);
+// printarpoke.innerHTML = banana;
 
-window.data = calculadora;
+function filterData(listapokemon, condition) {
+  return listapokemon.filter(y => y.egg)
+}
+
+
+
+
+// const calculadora = (velocidade, ovo, incubadora, tempoDiario) => { //incubadora = 1 ou super = 0,667
+//   let dias = ~~((ovo*incubadora/velocidade)/(tempoDiario/60));
+//   return dias
+// };
+
+// window.data = calculadora;
 
 // esta é uma função de exemplo
 // veja como agregamos a função ao objeto global window
