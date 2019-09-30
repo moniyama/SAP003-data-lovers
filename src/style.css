@@ -3,11 +3,14 @@ body {
 }
 
 .title {
-  /* margin-left: 68px; */
   float: left;
+  color: #002364;
+  font-size: 30px;
+  margin-top: 0px;
 }
 main {
   display: inline-block;
+  color: #4A5368;
 }
 .img {
   width: 100%;
@@ -17,7 +20,6 @@ main {
 .icon-egg {
   width: 50px;
   float: left;
-  /* position: absolute; */
 }
 
 ul {
@@ -35,6 +37,7 @@ ul {
 li a:hover {
   background: linear-gradient(to bottom, #08224e 0%, #0c4da2 100%);
   color: white;
+  
 }
 
 li a {
@@ -169,6 +172,7 @@ cursor: pointer;
   overflow: hidden;
   background: linear-gradient(to bottom, #243a7b 0%, #1d56a3 100%);
   float: right;
+  border-radius: 20px;
 }
 
 .topnav a {

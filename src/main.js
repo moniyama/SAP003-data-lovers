@@ -50,13 +50,12 @@ const printar = (array, element) => {
 };
 
 openMenu = document.getElementById("openMenu").addEventListener("click", () => {
-  console.log("banana");
   event.preventDefault();
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  var menu = document.getElementById("myTopnav");
+  if (menu.className === "topnav") {
+    menu.className += " responsive";
   } else {
-    x.className = "topnav";
+    menu.className = "topnav";
   }
 });
 
