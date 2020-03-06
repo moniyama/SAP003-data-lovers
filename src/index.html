@@ -1,117 +1,190 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<head>
-  <meta charset="utf-8">
-  <title>Egglator</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-      <img class="icon-egg" src="icone-egg.svg" alt="Icone ovo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Egglator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img class="icon-egg" src="./imagens/icone-egg.svg" alt="Icone ovo" />
       <p class="title">Egglator</p>
-        <div class="topnav" id="myTopnav">
-            <a>SOBRE</a>
-            <a href="#calculadora-section">CALCULADORA</a>
-            <a href="#filtro-section">POKEMON POR OVO</a>
-            <a href="#ordenar">ORDERNAR POKEMON</a>
-            <a href="" class="icon"  id="openMenu">
-                <i class="lni-chevron-down"></i>
-              </a>
-        </div>
-  </header>
-
-  <main>
-    <section class="about">
-      <p id="sobre">Olá, treinador pokemon! Administre e saiba o tempo aproximado para o ovo pokemon eclodir e visualize os pokemons da região de Kanto</p>
-    </section>
-    <section class="calculadora" id="calculadora-section">
-      <h2>CALCULADORA</h2>
-      <p>Selecione as opções abaixo e verifique quanto tempo de caminhada será necessario para
-        eclodir seu ovo!</p>
-      <form id="calculadora">
-        <p>A minha encubadora é:</p>
-        <div class="incubadora" id="incubadora">
-          <input class="incubadora" type="radio" name="incubadora" value="1" checked>
-          <label for="normal">
-            <img class="incubadora" src="incubadoralimitada.png" alt="Incubadora Normal">
-          </label>
-          <input class="incubadora" type="radio" name="incubadora" value="0,667">
-          <label for="super">
-            <img class="incubadora" src="superincubadora.png" alt="Incubadora super">
-          </label>
-        </div>
-        <div class="content-velocidade">
-          <p>Eu caminho: </p>
-          <input type="radio" name="velocidade" class="velocidade" value="4"><span>Devagar</span>
-          <input type="radio" name="velocidade" class="velocidade" value="5" checked><span>Normal</span>
-          <input type="radio" name="velocidade" class="velocidade" value="6"><span>Rápido</span>
-        </div>
-        <div id="egg-km">
-          <p>O ovo do pokemon é de: </p>
-          <input class="egg-km" type="radio" name="ovo" value="2" checked>
-          <span class="km">2 KM</span>
-          <input class="egg-km" type="radio" name="ovo" value="5">
-          <span class="km">5 KM</span>
-          <input class="egg-km" type="radio" name="ovo" value="10">
-          <span class="km">10 KM</span>
-        </div>
-        <div id="tempo">
-          <p>Irei caminhar por: </p>
-          <input class="minutos" type="number" name="tempo" id="tempo-diario"> Minutos
-        </div>
-        <button class="btn-resultado" id="calcular">Calcular</button>
-      </form>
-      <div id="resultado" class="resultado">
+      <div class="topnav" id="myTopnav">
+        <a>SOBRE</a>
+        <a href="#calculadora-section">CALCULADORA</a>
+        <a href="#filtro-section">POKEMON POR OVO</a>
+        <a href="#ordenar">ORDERNAR POKEMON</a>
+        <a href="" class="icon" id="openMenu">
+          <i class="lni-chevron-down"></i>
+        </a>
       </div>
-    </section>
-    <section class="filtro" id="filtro-section">
-      <h2>POKEMON POR OVO</h2>
-      <h3 id="filtro">Escolha um ovo para visualizar os pokemons que podem eclodir</h3>
-      <section class="radio" id="radio">
-        <div class="egg-option">
-          <input class="radio" type="radio" name="imagem" id="i1" value="2 km" />
-          <label for="i1">
-            <span id="km-2" class="egg-km">2 km</span>
-            <img class="egg" src="Egg_2k.png" alt="">
-          </label>
-          <input class="radio" type="radio" name="imagem" id="i2" value="5 km" />
-          <label for="i2">
-            <span id="km-5" class="egg-km">5 km</span>
-            <img class="egg" src="Egg_5k.png" alt="">
-          </label>
-          <input class="radio" type="radio" name="imagem" id="i3" value="10 km" />
-          <label for="i3">
-            <span id="km-10" class="egg-km">10 km</span>
-            <img class="egg" src="egg10.png" alt="">
-          </label>
-        </div>
-        <div id="pokemon">
-        </div>
+    </header>
+    <main>
+      <section class="about">
+        <p id="sobre">
+          Olá, treinador pokemon! Administre e saiba o tempo aproximado para o
+          ovo pokemon eclodir e visualize os pokemons da região de Kanto
+        </p>
       </section>
-    </section>
-    <hr>
-    <section class="select" id="select">
-      <div id="ordenar">
-        <label for="select">
-          <h2>ORDENAR POKEMON</h2>
-          <h3>Ordene os 150 pokemons da região de Kanto:</h3>
-        </label>
-        <select class="select-az" id="select-section">
-          <option name="" id="" value="">Selecione uma opção</option>
-          <option sort="crescente" id="nome" value="name">Nome AZ</option>
-          <option sort="decrescente" id="nomeaz" value="name">Nome ZA</option>
-          <option sort="crescente" id="crescente" value="id">Numero Crescente</option>
-          <option sort="decrescente" id="dec" value="id">Numero Decrescente</option>
-        </select>
-      </div>
-      <div id="showpokemons"></div>
-    </section>
-  </main>
-  <script src="data/pokemon/pokemon.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
-</body>
+      <section class="calculadora" id="calculadora-section">
+        <h2>CALCULADORA</h2>
+        <p>
+          Selecione as opções abaixo e verifique quanto tempo de caminhada será
+          necessario para eclodir seu ovo!
+        </p>
+        <form id="calculadora">
+          <p>A minha encubadora é:</p>
+          <div class="incubadora" id="incubadora">
+            <input
+              class="incubadora"
+              type="radio"
+              name="incubadora"
+              value="1"
+              checked
+            />
+            <label for="normal">
+              <img
+                class="incubadora"
+                src="./imagens/incubadoralimitada.png"
+                alt="Incubadora Normal"
+              />
+            </label>
+            <input
+              class="incubadora"
+              type="radio"
+              name="incubadora"
+              value="0,667"
+            />
+            <label for="super">
+              <img
+                class="incubadora"
+                src="./imagens/superincubadora.png"
+                alt="Incubadora super"
+              />
+            </label>
+          </div>
+          <div class="content-velocidade">
+            <p>Eu caminho:</p>
+            <input
+              type="radio"
+              name="velocidade"
+              class="velocidade"
+              value="4"
+            /><span>Devagar</span>
+            <input
+              type="radio"
+              name="velocidade"
+              class="velocidade"
+              value="5"
+              checked
+            /><span>Normal</span>
+            <input
+              type="radio"
+              name="velocidade"
+              class="velocidade"
+              value="6"
+            /><span>Rápido</span>
+          </div>
+          <div id="egg-km">
+            <p>O ovo do pokemon é de:</p>
+            <input class="egg-km" type="radio" name="ovo" value="2" checked />
+            <span class="km">2 KM</span>
+            <input class="egg-km" type="radio" name="ovo" value="5" />
+            <span class="km">5 KM</span>
+            <input class="egg-km" type="radio" name="ovo" value="10" />
+            <span class="km">10 KM</span>
+          </div>
+          <div id="tempo">
+            <p>Irei caminhar por:</p>
+            <input
+              class="minutos"
+              type="number"
+              name="tempo"
+              id="tempo-diario"
+            />
+            Minutos
+          </div>
+          <button class="btn-resultado" id="calcular">Calcular</button>
+        </form>
+        <div id="resultado" class="resultado"></div>
+      </section>
+      <section class="filtro" id="filtro-section">
+        <h2>POKEMON POR OVO</h2>
+        <h3 id="filtro">
+          Escolha um ovo para visualizar os pokemons que podem eclodir
+        </h3>
+        <section class="radio" id="radio">
+          <div class="egg-option">
+            <input
+              class="radio"
+              type="radio"
+              name="imagem"
+              id="i1"
+              value="2 km"
+            />
+            <label for="i1">
+              <span id="km-2" class="egg-km">2 km</span>
+              <img class="egg" src="./imagens/Egg_2k.png" alt="" />
+            </label>
+            <input
+              class="radio"
+              type="radio"
+              name="imagem"
+              id="i2"
+              value="5 km"
+            />
+            <label for="i2">
+              <span id="km-5" class="egg-km">5 km</span>
+              <img class="egg" src="./imagens/Egg_5k.png" alt="" />
+            </label>
+            <input
+              class="radio"
+              type="radio"
+              name="imagem"
+              id="i3"
+              value="10 km"
+            />
+            <label for="i3">
+              <span id="km-10" class="egg-km">10 km</span>
+              <img class="egg" src="./imagens/egg10.png" alt="" />
+            </label>
+          </div>
+          <div id="pokemon"></div>
+        </section>
+      </section>
+      <hr />
+      <section class="select" id="select">
+        <div id="ordenar">
+          <label for="select">
+            <h2>ORDENAR POKEMON</h2>
+            <h3>Ordene os 150 pokemons da região de Kanto:</h3>
+          </label>
+          <select class="select-az" id="select-section">
+            <option name="" id="" value="">Selecione uma opção</option>
+            <option sort="crescente" id="nome" value="name">Nome AZ</option>
+            <option sort="decrescente" id="nomeaz" value="name">Nome ZA</option>
+            <option sort="crescente" id="crescente" value="id"
+              >Numero Crescente</option
+            >
+            <option sort="decrescente" id="dec" value="id"
+              >Numero Decrescente</option
+            >
+          </select>
+        </div>
+        <div id="showpokemons"></div>
+      </section>
+    </main>
+    <script src="data/pokemon/pokemon.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
