@@ -6,20 +6,18 @@
     <title>Egglator</title>
     <link rel="stylesheet" href="style.css" />
     <link
-      href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css"
-      rel="stylesheet"
-    />
-    <link
       href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <header>
-      <img class="icon-egg" src="./imagens/icone-egg.svg" alt="Icone ovo" />
-      <p class="title">Egglator</p>
+    <header class="flex space-between">
+      <div class="flex">
+        <img class="icon-egg" src="./imagens/icone-egg.svg" alt="Icone ovo" />
+        <h1 class="title">EGGLATOR</h1>
+      </div>
       <div class="topnav" id="myTopnav">
-        <a>SOBRE</a>
+        <a href="#sobre">SOBRE</a>
         <a href="#calculadora-section">CALCULADORA</a>
         <a href="#filtro-section">POKEMON POR OVO</a>
         <a href="#ordenar">ORDERNAR POKEMON</a>
@@ -29,13 +27,15 @@
       </div>
     </header>
     <main>
-      <section class="about">
-        <p id="sobre">
-          Olá, treinador pokemon! Administre e saiba o tempo aproximado para o
+      <section class="box-section" id="sobre">
+        <h1>SOBRE NÓS</h1>
+        <p>
+          Olá, treinador Pokémon!
+          Administre e saiba o tempo aproximado para o
           ovo pokemon eclodir e visualize os pokemons da região de Kanto
         </p>
       </section>
-      <section class="calculadora" id="calculadora-section">
+      <section class="box-section" id="calculadora-section">
         <h2>CALCULADORA</h2>
         <p>
           Selecione as opções abaixo e verifique quanto tempo de caminhada será
@@ -117,7 +117,7 @@
         </form>
         <div id="resultado" class="resultado"></div>
       </section>
-      <section class="filtro" id="filtro-section">
+      <section class="box-section" id="filtro-section">
         <h2>POKEMON POR OVO</h2>
         <h3 id="filtro">
           Escolha um ovo para visualizar os pokemons que podem eclodir
@@ -161,9 +161,8 @@
           <div id="pokemon"></div>
         </section>
       </section>
-      <hr />
       <section class="select" id="select">
-        <div id="ordenar">
+        <div class="box-section" id="ordenar">
           <label for="select">
             <h2>ORDENAR POKEMON</h2>
             <h3>Ordene os 150 pokemons da região de Kanto:</h3>
@@ -179,8 +178,8 @@
               >Numero Decrescente</option
             >
           </select>
+          <div id="showpokemons"></div>
         </div>
-        <div id="showpokemons"></div>
       </section>
     </main>
     <script src="data/pokemon/pokemon.js"></script>
