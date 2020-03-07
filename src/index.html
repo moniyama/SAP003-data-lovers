@@ -11,12 +11,15 @@
     />
   </head>
   <body>
-    <header class="flex space-between">
-      <div class="flex">
-        <img class="icon-egg" src="./imagens/icone-egg.svg" alt="Icone ovo" />
-        <h1 class="title">EGGLATOR</h1>
+    <header>
+      <div class="center margin-fixed">
+        <!-- <img class="icon-egg" src="./imagens/icone-egg.svg" alt="Icone ovo" /> -->
+        <img
+          src="https://fontmeme.com/permalink/200307/15d36fc9aaafd2418e41c8c037eef9c6.png"
+          alt="fonte-de-pokemon"
+        />
       </div>
-      <div class="topnav" id="myTopnav">
+      <div class="topnav bold center blue" id="myTopnav">
         <a href="#sobre">SOBRE</a>
         <a href="#calculadora-section">CALCULADORA</a>
         <a href="#filtro-section">POKEMON POR OVO</a>
@@ -26,47 +29,44 @@
         </a>
       </div>
     </header>
-    <main>
-      <section class="box-section" id="sobre">
-        <h1>SOBRE NÓS</h1>
-        <p>
-          Olá, treinador Pokémon!
-          Administre e saiba o tempo aproximado para o
-          ovo pokemon eclodir e visualize os pokemons da região de Kanto
-        </p>
+    <main class="yellow center main">
+      <section class="box-section white" id="sobre">
+        <h1>SOBRE</h1>
+        <hr />
+          <h3>Olá, treinador Pokémon!</h3>
+          <p>
+            Administre e saiba o tempo aproximado para o ovo pokemon eclodir e
+            visualize os pokemons da região de Kanto
+          </p>
       </section>
       <section class="box-section" id="calculadora-section">
         <h2>CALCULADORA</h2>
+        <hr />
         <p>
           Selecione as opções abaixo e verifique quanto tempo de caminhada será
           necessario para eclodir seu ovo!
         </p>
         <form id="calculadora">
           <p>A minha encubadora é:</p>
-          <div class="incubadora" id="incubadora">
-            <input
-              class="incubadora"
-              type="radio"
-              name="incubadora"
-              value="1"
-              checked
-            />
+          <div class="" id="incubadora">
+            <input class="display-none incubadora" type="radio"
+            name="incubadora" value="1" checked onchange= />
             <label for="normal">
               <img
-                class="incubadora"
+                class="incubadora pointer"
                 src="./imagens/incubadoralimitada.png"
                 alt="Incubadora Normal"
               />
             </label>
             <input
-              class="incubadora"
+              class="display-none incubadora"
               type="radio"
               name="incubadora"
               value="0,667"
             />
             <label for="super">
               <img
-                class="incubadora"
+                class="incubadora pointer"
                 src="./imagens/superincubadora.png"
                 alt="Incubadora super"
               />
@@ -119,6 +119,8 @@
       </section>
       <section class="box-section" id="filtro-section">
         <h2>POKEMON POR OVO</h2>
+        <hr />
+
         <h3 id="filtro">
           Escolha um ovo para visualizar os pokemons que podem eclodir
         </h3>
@@ -165,6 +167,8 @@
         <div class="box-section" id="ordenar">
           <label for="select">
             <h2>ORDENAR POKEMON</h2>
+            <hr />
+
             <h3>Ordene os 150 pokemons da região de Kanto:</h3>
           </label>
           <select class="select-az" id="select-section">
