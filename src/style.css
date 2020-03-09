@@ -2,8 +2,11 @@
   font-family: "Ubuntu", sans-serif;
   padding: 0px;
 }
-body {
+.margin-none {
   margin: 0px;
+}
+.logo {
+  height: 100px;
 }
 .black {
   background-color: black;
@@ -17,28 +20,30 @@ body {
 .red {
   background-color: #ff1f1f;
 }
-.light-blue {
-  background-color: 	#5db9ff;
+.green {
+  background-color: #40ab61;
 }
 .blue {
-  background-color: #356ABC;
+  background-color: #356abc;
 }
-.topnav {
-  padding: 13px 16px;
-  /* position: sticky; */
-}
-.topnav a {
+
+.tablink {
   color: white;
-  text-align: center;
-  text-decoration: none;
   font-size: 17px;
-  padding: 14px 16px;
+  padding: 10px 20px;
+  border: none;
+  background-color: inherit;
+  outline: none;
 }
-.topnav a:hover {
+.tablink:hover {
   background-color: #5db9ff;
 }
-.topnav .icon {
+.tabcontent {
   display: none;
+}
+
+.show-tab {
+  display: block;
 }
 .margin-fixed {
   margin: 20px;
@@ -46,36 +51,110 @@ body {
 .main {
   padding: 2%;
 }
+.calc-form {
+  margin: 0px 20px;
+  padding: 0px 20px;
+}
+.calc-input-tempo {
+  width: 70px;
+  padding: 5px;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.radio {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.space-around {
+  justify-content: space-around;
+}
+.margin-auto {
+  margin: auto;
+}
 .center {
   text-align: center;
+  align-self: center;
+  justify-content: center;
 }
-.icon-egg {
+.egg {
   width: 50px;
+}
+.egg-filter-img {
+  width: 90px;
+}
+.egg-filter {
+  width: 180px;
+  align-self: flex-start;
+  margin-left: 1%;
+}
+.border {
+  border-radius: 8px;
+}
+.filter {
+  margin-left: 5%;
+  width: 100%;
 }
 .bold {
   font-weight: bold;
 }
 .content {
-  padding: 2%;
+  padding: 0% 2%;
 }
-
 .box-section {
-  padding: 0.5% 2% 4%;
+  padding: 0.5% 2% 3%;
   margin: 0px 10% 3%;
-  border-radius: 3px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);}
+  border-radius: 13px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 .pointer {
   cursor: pointer;
 }
-.display-none {
-  visibility: hidden;
+.hidden {
+  display: none;
 }
 .incubadora {
   height: 100px;
 }
-input[type=radio]:checked label {
-    box-shadow:0px 12px 22px 1px #333;
+input[type="radio"]:checked + label img {
+  background-color: #356abc;
 }
+.checked {
+  background-color: violet;
+}
+.card-pokemon {
+  border: solid 4px white;
+  padding: 5px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: white;
+  margin: 5px;
+}
+
+.select-az {
+  background-color: #08224e;
+  padding: 5px;
+  color: white;
+  outline: none;
+  height: 40px;
+  align-items: center;
+}
+/* #pokemon,
+#showpokemons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  margin: 10px;
+}
+  */
 /* .title {
   font-size: 30px;
   color: #273979;
@@ -107,24 +186,15 @@ li a {
   font-weight: 700;
   font-size: 14px;
 }
-
+.topnav .icon {
+  display: none;
+}
 .lni-menu {
   font-size: 20px;
   display: none;
 }
 input[type="checkbox"] {
   visibility: hidden;
-}
-
-
-
-.radio [type="radio"] {
-  visibility: hidden;
-}
-
-.egg {
-  height: 100px;
-  margin: 20px;
 }
 
 .radio :checked + label {
@@ -151,20 +221,7 @@ input[type="checkbox"] {
   margin-top: 20px;
 } 
 
-.select {
-  display: block;
-  height: 40px;
-  font-size: 18px;
-  margin-bottom: 16px;
-  border: none;
-}
-.select-az {
-  background-color: #08224e;
-  border-radius: 30px;
-  padding: 10px;
-  color: white;
-  font-size: 16px;
-}
+
 .name {
   margin-top: 20px;
 }
@@ -182,12 +239,8 @@ input[type="checkbox"] {
   margin-bottom: 0px;
 }
 
-.egg-km {
-  justify-content: center;
-  display: flex;
-  font-size: 26px;
-  font-weight: 700;
-}
+
+
 #km-2 {
   color: #96b46c;
 }
@@ -209,8 +262,6 @@ input[type="checkbox"] {
   margin-top: 10px;
 }
  */
-
-
 
 /* 
 @media screen and (max-width: 1000px) {
