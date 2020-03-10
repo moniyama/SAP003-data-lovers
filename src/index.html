@@ -19,22 +19,26 @@
           alt="fonte-de-pokemon"
         />
       </div>
-      <nav class="topnav flex bold center black" id="myTopnav">
-        <button class="tablink blue" data-page="home" data-color="blue">
+      <nav class="topnav flex flex-wrap bold center black" id="myTopnav">
+        <button class="tablink blue pointer" data-page="home" data-color="blue">
           HOME
         </button>
         <button
-          class="tablink inherit"
+          class="tablink inherit pointer"
           data-page="calculator"
           data-color="yellow"
         >
           CALCULADORA
         </button>
-        <button class="tablink inherit" data-page="egg-filter" data-color="red">
+        <button
+          class="tablink inherit pointer"
+          data-page="egg-filter"
+          data-color="red"
+        >
           POKEMON POR OVO
         </button>
         <button
-          class="tablink inherit"
+          class="tablink inherit pointer"
           data-page="all-pokemon"
           data-color="green"
         >
@@ -83,7 +87,7 @@
             rotina!
           </p>
         </header>
-        <div class="flex content">
+        <div class="flex flex-wrap content">
           <form id="calculadora" class="calc-form light-blue">
             <div class="cal-section-tempo">
               <p>
@@ -173,13 +177,11 @@
                 value="10"
                 id="10km"
               />
-
               <label for="10km"
                 ><span>10 KM</span>
                 <img class="egg" src="./imagens/egg10.png" alt="egg 10km"
               /></label>
             </div>
-
             <button class="btn-resultado" id="calcular">Calcular</button>
           </form>
           <div id="resultado" class="center margin-auto"></div>
@@ -193,57 +195,57 @@
             Quem saber quais Pokémon podem sair dos ovos?
           </h3>
         </header>
-        <div class="content radio" id="radio">
+        <div class="content flex" id="radio">
           <aside class="flex flex-column egg-filter border">
             <p>Descubra aqui!</p>
-            <div class="egg-filter-radio">
+            <div class="egg-filter-radio pointer">
               <input
-                class=" hidden"
+                class="hidden"
                 type="radio"
                 name="imagem"
                 id="i1"
                 value="2 km"
               />
-              <label class="flex label" for="i1">
+              <label class="flex egg-filter-label pointer" for="i1">
                 <img class="egg-filter-img" src="./imagens/Egg_2k.png" alt="" />
                 <p class="margin-none" id="km-2">2 km</p>
               </label>
             </div>
-            <div class="egg-filter-radio">
+            <div class="egg-filter-radio pointer">
               <input
-                class="radio hidden"
+                class="hidden pointer"
                 type="radio"
                 name="imagem"
                 id="i2"
                 value="5 km"
               />
-              <label class="flex label" for="i2">
+              <label class="flex flex-wrap egg-filter-label pointer" for="i2">
                 <img class="egg-filter-img" src="./imagens/Egg_5k.png" alt="" />
                 <p class="margin-none" id="km-5">5 km</p>
               </label>
             </div>
-            <div class="egg-filter-radio">
+            <div class="egg-filter-radio pointer">
               <input
-                class="radio hidden"
+                class="hidden"
                 type="radio"
                 name="imagem"
                 id="i3"
                 value="10 km"
               />
-              <label class="flex label" for="i3">
+              <label class="flex egg-filter-label pointer" for="i3">
                 <img class="egg-filter-img" src="./imagens/egg10.png" alt="" />
                 <p class="margin-none" id="km-10">10 km</p>
               </label>
             </div>
           </aside>
-          <div id="pokemon" class="flex center filter"></div>
+          <div id="pokemon" class="flex flex-wrap space-around filter"></div>
         </div>
       </section>
       <section class="box-section white tabcontent" id="all-pokemon">
         <header>
           <h2>151 POKEMONS</h2>
           <hr />
-          <div class="flex space-around">
+          <div class="flex flex-wrap space-around">
             <h3>Os Pokémons disponíveis na Região de Kanto são:</h3>
             <select class="select-az border" id="select-section">
               <option name="" id="" value="">Selecione uma opção</option>
@@ -261,7 +263,7 @@
           </div>
         </header>
         <div class="content" id="ordenar">
-          <div id="showpokemons" class="flex center"></div>
+          <div id="showpokemons" class="flex flex-wrap space-around"></div>
         </div>
       </section>
     </main>
