@@ -12,10 +12,21 @@ const calculo = (velocidade, ovo, incubadora, tempoDiario) => {
 const tablink = document.querySelectorAll(".tablink");
 tablink.forEach(tab => {
   tab.addEventListener("click", e => {
+    removeColors();
     removeAllContent();
     showCurrentTab(e);
   });
 });
+
+const removeColors = () => {
+  document
+    .getElementById("main")
+    .classList.remove("blue", "yellow", "red", "green");
+  tablink.forEach(tabs => {
+    tabs.classList.remove("blue", "yellow", "red", "green");
+    tabs.classList.add("inherit");
+  });
+};
 
 const removeAllContent = () => {
   const tabcontent = document.querySelectorAll(".tabcontent");
@@ -25,9 +36,11 @@ const removeAllContent = () => {
 };
 
 const showCurrentTab = e => {
+  document.getElementById("main").classList.add(e.currentTarget.dataset.color);
   document
     .getElementById(e.currentTarget.dataset.page)
     .classList.add("show-tab");
+  e.currentTarget.classList.replace("inherit", e.currentTarget.dataset.color);
 };
 
 document.getElementById("calcular").addEventListener("click", event => {
@@ -52,14 +65,20 @@ const showpokemons = document.getElementById("showpokemons");
 const listapokemon = POKEMON.pokemon;
 const printarPorcentagem = document.getElementById("printar-porcentagem");
 
-radio = document.getElementById("radio");
-radio.addEventListener("change", () => {
-  filtrado = filtro(listapokemon, event.target.value);
-  printar(filtrado, printarpoke);
-  // let porcent = porcentagem(filtrado, listapokemon);
-  // printarPorcentagem.innerHTML = `SABIA? Com o ovo de ${
-  //   event.target.value
-  // }, você poderá eclodir ${porcent.toFixed(2)}% dos 150 pokemons de Kanto!`;
+radio = document.querySelectorAll(".egg-filter-radio");
+radio.forEach(egg => {
+  egg.addEventListener("change", (e) => {
+    radio.forEach((eggRadio) => {
+      eggRadio.classList.remove("checked");
+    });
+    filtrado = filtro(listapokemon, event.target.value);
+    printar(filtrado, printarpoke);
+    e.currentTarget.classList.add("checked");
+    // let porcent = porcentagem(filtrado, listapokemon);
+    // printarPorcentagem.innerHTML = `SABIA? Com o ovo de ${
+    //   event.target.value
+    // }, você poderá eclodir ${porcent.toFixed(2)}% dos 150 pokemons de Kanto!`;
+  });
 });
 
 // ordenação 150 pokemons

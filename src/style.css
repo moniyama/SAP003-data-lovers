@@ -26,13 +26,14 @@
 .blue {
   background-color: #356abc;
 }
-
+.inherit {
+  background-color: inherit;
+}
 .tablink {
   color: white;
   font-size: 17px;
   padding: 10px 20px;
   border: none;
-  background-color: inherit;
   outline: none;
 }
 .tablink:hover {
@@ -41,7 +42,9 @@
 .tabcontent {
   display: none;
 }
-
+.label {
+  margin: 10px 10px 10px 0px;
+}
 .show-tab {
   display: block;
 }
@@ -88,9 +91,13 @@
   width: 90px;
 }
 .egg-filter {
-  width: 180px;
+  width: 200px;
   align-self: flex-start;
   margin-left: 1%;
+  background-color: #FE9898;
+}
+.egg-filter-radio {
+  width: 100%;
 }
 .border {
   border-radius: 8px;
@@ -120,11 +127,9 @@
 .incubadora {
   height: 100px;
 }
-input[type="radio"]:checked + label img {
-  background-color: #356abc;
-}
+
 .checked {
-  background-color: violet;
+  background-color: rgba(255, 31, 31, 0.41);;
 }
 .card-pokemon {
   border: solid 4px white;
@@ -197,9 +202,6 @@ input[type="checkbox"] {
   visibility: hidden;
 }
 
-.radio :checked + label {
-  filter: none;
-}
 
 #pokemon,
 #showpokemons {

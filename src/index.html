@@ -20,16 +20,24 @@
         />
       </div>
       <nav class="topnav flex bold center black" id="myTopnav">
-        <button class="tablink" data-page="home" data-color="blue">
+        <button class="tablink blue" data-page="home" data-color="blue">
           HOME
         </button>
-        <button class="tablink" data-page="calculator" data-color="yellow">
+        <button
+          class="tablink inherit"
+          data-page="calculator"
+          data-color="yellow"
+        >
           CALCULADORA
         </button>
-        <button class="tablink" data-page="egg-filter" data-color="red">
+        <button class="tablink inherit" data-page="egg-filter" data-color="red">
           POKEMON POR OVO
         </button>
-        <button class="tablink" data-page="all-pokemon" data-color="green">
+        <button
+          class="tablink inherit"
+          data-page="all-pokemon"
+          data-color="green"
+        >
           OS 151 POKEMONS
         </button>
         <!-- <a href="" class="icon" id="openMenu">
@@ -37,8 +45,8 @@
         </a> -->
       </nav>
     </header>
-    <main class="center main" id="main">
-      <section class="box-section blue tabcontent show-tab" id="home">
+    <main class="center main blue" id="main">
+      <section class="box-section white tabcontent show-tab" id="home">
         <header>
           <h1>SOBRE</h1>
           <hr />
@@ -65,7 +73,7 @@
           </p>
         </div>
       </section>
-      <section class="box-section yellow tabcontent" id="calculator">
+      <section class="box-section white tabcontent" id="calculator">
         <header>
           <h2>CALCULADORA</h2>
           <hr />
@@ -177,7 +185,7 @@
           <div id="resultado" class="center margin-auto"></div>
         </div>
       </section>
-      <section class="box-section red tabcontent" id="egg-filter">
+      <section class="box-section white tabcontent" id="egg-filter">
         <header>
           <h2>POKEMON POR OVO</h2>
           <hr />
@@ -186,46 +194,52 @@
           </h3>
         </header>
         <div class="content radio" id="radio">
-          <aside class="flex flex-column egg-filter blue border">
+          <aside class="flex flex-column egg-filter border">
             <p>Descubra aqui!</p>
-            <input
-              class="radio hidden"
-              type="radio"
-              name="imagem"
-              id="i1"
-              value="2 km"
-            />
-            <label for="i1">
-              <p class="margin-none" id="km-2">2 km</p>
-              <img class="egg-filter-img" src="./imagens/Egg_2k.png" alt="" />
-            </label>
-            <input
-              class="radio hidden"
-              type="radio"
-              name="imagem"
-              id="i2"
-              value="5 km"
-            />
-            <label for="i2">
-              <p class="margin-none" id="km-5">5 km</p>
-              <img class="egg-filter-img" src="./imagens/Egg_5k.png" alt="" />
-            </label>
-            <input
-              class="radio hidden"
-              type="radio"
-              name="imagem"
-              id="i3"
-              value="10 km"
-            />
-            <label for="i3">
-              <p class="margin-none" id="km-10">10 km</p>
-              <img class="egg-filter-img" src="./imagens/egg10.png" alt="" />
-            </label>
+            <div class="egg-filter-radio">
+              <input
+                class=" hidden"
+                type="radio"
+                name="imagem"
+                id="i1"
+                value="2 km"
+              />
+              <label class="flex label" for="i1">
+                <img class="egg-filter-img" src="./imagens/Egg_2k.png" alt="" />
+                <p class="margin-none" id="km-2">2 km</p>
+              </label>
+            </div>
+            <div class="egg-filter-radio">
+              <input
+                class="radio hidden"
+                type="radio"
+                name="imagem"
+                id="i2"
+                value="5 km"
+              />
+              <label class="flex label" for="i2">
+                <img class="egg-filter-img" src="./imagens/Egg_5k.png" alt="" />
+                <p class="margin-none" id="km-5">5 km</p>
+              </label>
+            </div>
+            <div class="egg-filter-radio">
+              <input
+                class="radio hidden"
+                type="radio"
+                name="imagem"
+                id="i3"
+                value="10 km"
+              />
+              <label class="flex label" for="i3">
+                <img class="egg-filter-img" src="./imagens/egg10.png" alt="" />
+                <p class="margin-none" id="km-10">10 km</p>
+              </label>
+            </div>
           </aside>
           <div id="pokemon" class="flex center filter"></div>
         </div>
       </section>
-      <section class="box-section green tabcontent" id="all-pokemon">
+      <section class="box-section white tabcontent" id="all-pokemon">
         <header>
           <h2>151 POKEMONS</h2>
           <hr />
