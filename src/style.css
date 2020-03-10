@@ -52,12 +52,12 @@
   padding: 2%;
 }
 .calc-form {
-  margin: 0px 20px;
   padding: 0px 20px;
+  width: 60%;
+  background-color: #F9ECB9;
 }
 .calc-input-tempo {
   width: 70px;
-  padding: 5px;
 }
 .flex {
   display: flex;
@@ -71,6 +71,9 @@
 }
 .space-around {
   justify-content: space-around;
+}
+.padding {
+  padding: 5px
 }
 .margin-auto {
   margin: auto;
@@ -92,18 +95,21 @@
   margin-left: 1%;
   background-color: #fe9898;
 }
-.egg-filter-radio {
-  width: 100%;
-}
 .egg-filter-label {
   padding: 10px 10px 10px 0px;
 }
 .filter {
   margin-left: 5%;
+}
+.width {
   width: 100%;
 }
 .checked {
   background-color: rgba(255, 31, 31, 0.41);
+}
+.checked-calc {
+  background-color: rgba(251, 215, 67, 0.4);
+  
 }
 .border {
   border-radius: 8px;
@@ -147,11 +153,14 @@
 }
 .select-az {
   background-color: #08224e;
-  padding: 5px;
   color: white;
   outline: none;
   height: 40px;
   align-items: center;
+}
+
+.resultado {
+  width: 150px;
 }
 /* #pokemon,
 #showpokemons {

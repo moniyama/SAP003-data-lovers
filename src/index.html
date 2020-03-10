@@ -88,13 +88,13 @@
           </p>
         </header>
         <div class="flex flex-wrap content">
-          <form id="calculadora" class="calc-form light-blue">
+          <form id="calculadora" class="calc-form border">
             <div class="cal-section-tempo">
               <p>
                 Quanto tempo você costuma caminhar diariamente?<br />
                 (Lembre-se se contabilizar o tempo de ida e volta)
               </p>
-              <input type="number" id="tempo-diario" class="calc-input-tempo" />
+              <input type="number" id="tempo-diario" class="calc-input-tempo padding" />
               Minutos
             </div>
             <div class="cal-section-velocidade">
@@ -113,78 +113,51 @@
               <label for="rapido">Rápido</label>
             </div>
             <hr />
-            <div class="cal-section-incubadora">
-              <p>A minha encubadora é:</p>
-              <input
-                class="hidden"
-                type="radio"
-                name="calc-incubadora"
-                id="inc-normal"
-                value="1"
-                checked
-              />
-              <label for="inc-normal" class="label">
-                <img
-                  class="incubadora pointer"
-                  src="./imagens/incubadoralimitada.png"
-                  alt="Incubadora Normal"
+            <div class="cal-section-ovo flex space-around">
+              <p>O ovo de:</p>
+              <div class="calc-ovo padding">
+                <input
+                  class="hidden"
+                  type="radio"
+                  name="ovo"
+                  value="2"
+                  id="2km"
                 />
-              </label>
-              <input
-                class="hidden"
-                type="radio"
-                name="calc-incubadora"
-                id="inc-super"
-                value="0.667"
-              />
-              <label for="inc-super" class="label">
-                <img
-                  class="incubadora pointer"
-                  src="./imagens/superincubadora.png"
-                  alt="Incubadora super"
+                <label class="flex" for="2km"
+                  ><span>2 KM</span>
+                  <img class="egg" src="./imagens/Egg_2k.png" alt="egg 2km" />
+                </label>
+              </div>
+              <div class="calc-ovo padding">
+                <input
+                  class="hidden"
+                  type="radio"
+                  name="ovo"
+                  value="5"
+                  id="5km"
                 />
-              </label>
-            </div>
-            <div class="cal-section-ovo">
-              <p>O ovo do pokemon é de:</p>
-              <input
-                class="hidden"
-                type="radio"
-                name="ovo"
-                value="2"
-                id="2km"
-                checked
-              />
-              <label for="2km"
-                ><span>2 KM</span>
-                <img class="egg" src="./imagens/Egg_2k.png" alt="egg 2km" />
-              </label>
-              <input
-                class="hidden"
-                type="radio"
-                name="ovo"
-                value="5"
-                id="5km"
-              />
-              <label for="5km"
-                ><span>5 KM</span>
-                <img class="egg" src="./imagens/Egg_5k.png" alt="egg 5km" />
-              </label>
-              <input
-                class="hidden"
-                type="radio"
-                name="ovo"
-                value="10"
-                id="10km"
-              />
-              <label for="10km"
-                ><span>10 KM</span>
-                <img class="egg" src="./imagens/egg10.png" alt="egg 10km"
-              /></label>
+                <label class="flex" for="5km"
+                  ><span>5 KM</span>
+                  <img class="egg" src="./imagens/Egg_5k.png" alt="egg 5km" />
+                </label>
+              </div>
+              <div class="calc-ovo padding">
+                <input
+                  class="hidden"
+                  type="radio"
+                  name="ovo"
+                  value="10"
+                  id="10km"
+                />
+                <label class="flex" for="10km"
+                  ><span>10 KM</span>
+                  <img class="egg" src="./imagens/egg10.png" alt="egg 10km"
+                /></label>
+              </div>
             </div>
             <button class="btn-resultado" id="calcular">Calcular</button>
           </form>
-          <div id="resultado" class="center margin-auto"></div>
+          <div id="resultado" class="center margin-auto resultado"></div>
         </div>
       </section>
       <section class="box-section white tabcontent" id="egg-filter">
@@ -198,7 +171,7 @@
         <div class="content flex" id="radio">
           <aside class="flex flex-column egg-filter border">
             <p>Descubra aqui!</p>
-            <div class="egg-filter-radio pointer">
+            <div class="egg-filter-radio pointer width">
               <input
                 class="hidden"
                 type="radio"
@@ -211,7 +184,7 @@
                 <p class="margin-none" id="km-2">2 km</p>
               </label>
             </div>
-            <div class="egg-filter-radio pointer">
+            <div class="egg-filter-radio pointer width">
               <input
                 class="hidden pointer"
                 type="radio"
@@ -224,7 +197,7 @@
                 <p class="margin-none" id="km-5">5 km</p>
               </label>
             </div>
-            <div class="egg-filter-radio pointer">
+            <div class="egg-filter-radio pointer width">
               <input
                 class="hidden"
                 type="radio"
@@ -238,7 +211,7 @@
               </label>
             </div>
           </aside>
-          <div id="pokemon" class="flex flex-wrap space-around filter"></div>
+          <div id="pokemon" class="flex flex-wrap space-around filter width"></div>
         </div>
       </section>
       <section class="box-section white tabcontent" id="all-pokemon">
@@ -247,7 +220,7 @@
           <hr />
           <div class="flex flex-wrap space-around">
             <h3>Os Pokémons disponíveis na Região de Kanto são:</h3>
-            <select class="select-az border" id="select-section">
+            <select class="select-az border padding" id="select-section">
               <option name="" id="" value="">Selecione uma opção</option>
               <option sort="crescente" id="nome" value="name">Nome AZ</option>
               <option sort="decrescente" id="nomeaz" value="name"

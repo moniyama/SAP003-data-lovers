@@ -1,13 +1,4 @@
 // color das navs/tabs
-const tablink = document.querySelectorAll(".tablink");
-tablink.forEach(tab => {
-  tab.addEventListener("click", e => {
-    removeColors();
-    removeAllContent();
-    showCurrentTab(e);
-  });
-});
-
 const removeColors = () => {
   document
     .getElementById("main")
@@ -33,38 +24,86 @@ const showCurrentTab = e => {
   e.currentTarget.classList.replace("inherit", e.currentTarget.dataset.color);
 };
 
+const tablink = document.querySelectorAll(".tablink");
+tablink.forEach(tab => {
+  tab.addEventListener("click", e => {
+    removeColors();
+    removeAllContent();
+    showCurrentTab(e);
+  });
+});
+
 // calculadora
-const calculo = (velocidade, ovo, incubadora, tempoDiario) => {
-  const resultado = document.getElementById("resultado");
-  resultado.innerHTML = `<p>Aproximadamente ${calculadora(
-    velocidade,
-    ovo,
-    incubadora,
-    tempoDiario
-  )} dias`;
+
+const daysToWeeks = days => {
+  if (days > 15) {
+    const addDays = days % 7;
+    const weeks = Math.floor(days / 7);
+    return [weeks, addDays];
+  } else {
+    return days;
+  }
 };
+
+const calcEggRadio = document.querySelectorAll(".calc-ovo");
+calcEggRadio.forEach(egg => {
+  egg.addEventListener("change", e => {
+    calcEggRadio.forEach(eggRadio => {
+      eggRadio.classList.remove("checked-calc");
+    });
+    e.currentTarget.classList.add("checked-calc");
+  });
+});
 
 document.getElementById("calcular").addEventListener("click", event => {
   event.preventDefault();
   const velocidade = document.querySelector("input[name ='velocidade']:checked")
     .value;
-  const ovo = document.querySelector("input[name='ovo']:checked").value;
-  const incubadora = document.querySelector(
-    "input[name='calc-incubadora']:checked"
-  ).value;
+  const ovo = document.querySelector("input[name='ovo']:checked");
   const tempoDiario = document.getElementById("tempo-diario").value;
   if (+tempoDiario <= 0) {
     alert("Insira um tempo válido");
+  } else if (ovo === null) {
+    alert("Escolha um ovo");
   } else {
+    const resultado = document.getElementById("resultado");
+    const diasIncubadoraNormal = calculadora(
+      velocidade,
+      ovo.value,
+      1,
+      tempoDiario
+    );
+    const diasIncubadoraSuper = calculadora(
+      velocidade,
+      ovo.value,
+      0.667,
+      tempoDiario
+    );
+    const tempoNormal = daysToWeeks(diasIncubadoraNormal);
+    const tempoSuper = daysToWeeks(diasIncubadoraSuper);
+    resultado.innerHTML = `
+    <h4>Incubadora Normal </h4>
+    <img class="incubadora" src="./imagens/incubadoralimitada.png" alt="Incubadora Normal"/>
+    <p class="margin-none">Aproximadamente</p> <p> ${
+      Array.isArray(tempoNormal)
+        ? tempoNormal[0] + " semanas e " + tempoNormal[1] + " dias"
+        : tempoNormal + (tempoNormal === 1 ? " dia" : " dias")
+    } </p>
+    <h4>Incubadora Super</h4>
+    <img class="incubadora" src="./imagens/superincubadora.png" alt="Incubadora Normal"/>
+    <p class="margin-none">Aproximadamente</p>
+    <p > ${
+      Array.isArray(tempoSuper)
+        ? tempoSuper[0] + " semanas e " + tempoSuper[1] + " dias"
+        : tempoSuper + (tempoSuper === 1 ? " dia" : " dias")
+    }`;
   }
-  calculo(velocidade, ovo, incubadora, tempoDiario);
 });
 
 // filtro de ovos
 const printarpoke = document.getElementById("pokemon");
 const showpokemons = document.getElementById("showpokemons");
 const listapokemon = POKEMON.pokemon;
-console.log(listapokemon)
 // const printarPorcentagem = document.getElementById("printar-porcentagem");
 
 radio = document.querySelectorAll(".egg-filter-radio");
@@ -76,6 +115,8 @@ radio.forEach(egg => {
     filtrado = filtro(listapokemon, event.target.value);
     printar(filtrado, printarpoke);
     e.currentTarget.classList.add("checked");
+
+    // porcentagem(filtrado, listapokemon);
     // let porcent = porcentagem(filtrado, listapokemon);
     // printarPorcentagem.innerHTML = `SABIA? Com o ovo de ${
     //   event.target.value
