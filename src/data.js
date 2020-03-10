@@ -13,14 +13,17 @@ const filtro = (array, ovo) => {
 };
 
 const ordem = (array, data, order) => {
-  array.sort((a, b) => {
+  const result = array.map((item)=> {
+    return item;
+  });
+  result.sort((a, b) => {
     if (a[data] < b[data])
       return -1;
     if (a[data] > b[data])
       return 1;
     return 0;
   });
-  return order === "decrescente" ? array.reverse() : array;
+  return order === "decrescente" ? result.reverse() : result;
 };
 
 // const porcentagem = (arrayFiltrada, arrayDatabase) => {

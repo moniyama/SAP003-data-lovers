@@ -1,14 +1,4 @@
-// calculadora
-const calculo = (velocidade, ovo, incubadora, tempoDiario) => {
-  const resultado = document.getElementById("resultado");
-  resultado.innerHTML = `<p>Aproximadamente ${calculadora(
-    velocidade,
-    ovo,
-    incubadora,
-    tempoDiario
-  )} dias`;
-};
-
+// color das navs/tabs
 const tablink = document.querySelectorAll(".tablink");
 tablink.forEach(tab => {
   tab.addEventListener("click", e => {
@@ -43,6 +33,17 @@ const showCurrentTab = e => {
   e.currentTarget.classList.replace("inherit", e.currentTarget.dataset.color);
 };
 
+// calculadora
+const calculo = (velocidade, ovo, incubadora, tempoDiario) => {
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML = `<p>Aproximadamente ${calculadora(
+    velocidade,
+    ovo,
+    incubadora,
+    tempoDiario
+  )} dias`;
+};
+
 document.getElementById("calcular").addEventListener("click", event => {
   event.preventDefault();
   const velocidade = document.querySelector("input[name ='velocidade']:checked")
@@ -63,12 +64,13 @@ document.getElementById("calcular").addEventListener("click", event => {
 const printarpoke = document.getElementById("pokemon");
 const showpokemons = document.getElementById("showpokemons");
 const listapokemon = POKEMON.pokemon;
-const printarPorcentagem = document.getElementById("printar-porcentagem");
+console.log(listapokemon)
+// const printarPorcentagem = document.getElementById("printar-porcentagem");
 
 radio = document.querySelectorAll(".egg-filter-radio");
 radio.forEach(egg => {
-  egg.addEventListener("change", (e) => {
-    radio.forEach((eggRadio) => {
+  egg.addEventListener("change", e => {
+    radio.forEach(eggRadio => {
       eggRadio.classList.remove("checked");
     });
     filtrado = filtro(listapokemon, event.target.value);
@@ -119,3 +121,4 @@ const printar = (array, element) => {
 // });
 
 window.onload = printar(listapokemon, showpokemons);
+window.onload = printar(listapokemon, printarpoke);
