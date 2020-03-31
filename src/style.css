@@ -1,154 +1,188 @@
-body {
-  font-family: 'Ubuntu', sans-serif;
+* {
+  font-family: "Ubuntu", sans-serif;
+  padding: 0px;
 }
-
-.title {
-  font-size: 30px;
-    color: #273979;
-    margin-top: 8px;
-  float: left;
+.margin-none {
+  margin: 0px;
 }
-main {
-  display: inline-block;
+.logo {
+  height: 100px;
 }
-.img {
-  width: 100%;
-  height: auto;
+.black {
+  background-color: black;
 }
-
-.icon-egg {
-  width: 50px;
-  float: left;
-  /* position: absolute; */
+.yellow {
+  background-color: #fbd743;
 }
-
-ul {
-  padding: 10px;
-  list-style-type: none;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  padding-left: 0px;
-  border-left: none;
-  border-right: none;
-  float: right;
+.white {
+  background-color: white;
 }
-
-li a:hover {
-  background: linear-gradient(to bottom, #08224e 0%, #0c4da2 100%);
+.red {
+  background-color: #F62D14;
+}
+.green {
+  background-color: #40ab61;
+}
+.blue {
+  background-color: #356abc;
+}
+.inherit {
+  background-color: inherit;
+}
+.tablink {
   color: white;
+  font-size: 17px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
 }
-
-li a {
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 14px;
+.tablink:hover {
+  background-color: #5db9ff;
 }
-
-.lni-menu {
-  font-size: 20px;
-  font-weight: bolder;
-  cursor: pointer;
+.tabcontent {
   display: none;
 }
-input[type="checkbox"] {
-  visibility: hidden;
+.show-tab {
+  display: block;
 }
-
-
-.calculadora, .about, #filtro-section {
-  border: solid 1px white;
-  border-radius: 4px;
-  padding: 16px;
-  margin-bottom: 14px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background-color: white;
-  margin-top: 40px;
+.margin-fixed {
+  margin: 20px;
 }
-
-.radio [type="radio"] {
-  visibility: hidden;
+.main {
+  padding: 2%;
 }
-
-.egg {
-height: 100px;
-margin: 20px; 
-cursor: pointer;
+.calc-form {
+  padding: 0px 20px;
+  width: 60%;
+  background-color: #F9ECB9;
 }
-
-.radio :checked+label {
-  filter: none;  
+.calc-input-tempo {
+  width: 70px;
 }
-
-#pokemon, #showpokemons {
+.flex {
   display: flex;
+  align-items: center;
+}
+.flex-wrap {
   flex-wrap: wrap;
+}
+.flex-column {
+  flex-direction: column;
+}
+.space-around {
+  justify-content: space-around;
+}
+.padding {
+  padding: 5px
+}
+.margin-auto {
+  margin: auto;
+}
+.center {
+  text-align: center;
+  align-self: center;
   justify-content: center;
 }
-.card {
-  margin: 10px;
- }
+.egg {
+  width: 50px;
+}
+.egg-filter-img {
+  width: 90px;
+}
+.egg-filter {
+  width: 200px;
+  align-self: flex-start;
+  margin-left: 1%;
+  background-color: #fe9898;
+}
+.egg-filter-label {
+  padding: 10px 10px 10px 0px;
+}
+.filter {
+  margin-left: 5%;
+}
+.width {
+  width: 100%;
+}
+.checked {
+  background-color: rgba(255, 31, 31, 0.41);
+}
+.checked-calc {
+  background-color: rgba(251, 215, 67, 0.4);
+  
+}
+.border {
+  border-radius: 8px;
+}
+.bold {
+  font-weight: bold;
+}
+.content {
+  padding: 0% 2%;
+}
+.box-section {
+  padding: 0.5% 2% 3%;
+  margin: 0px 10% 3%;
+  border-radius: 13px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.pointer {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.incubadora {
+  height: 100px;
+}
+
 .card-pokemon {
   border: solid 4px white;
-  padding: 10px;
+  padding: 15px 5px 0px;
   width: 180px;
-  height: 200px;
+  height: 180px;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background-color: white;
-  margin-top: 20px;
-  }
-
-.select {
-  display: block;
-  height: 40px;
-  font-size: 18px;
-  margin-bottom: 16px;
-  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: lightseagreen;
+  margin: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: lighten;
+  background-image: url("https://static.imagemwhats.com.br/content/assetz/uploads/2017/03/pokemon-go-pokeball-background-android-wallpaper-whatsapp-android-iphone-197x350.jpg");
 }
 .select-az {
   background-color: #08224e;
-  border-radius: 30px;
-  padding: 10px;
   color: white;
-  font-size: 16px;
-}
-.name {
-  margin-top: 20px;
-}
-.filtro {
-  margin-top: 40px;
+  outline: none;
+  height: 40px;
+  align-items: center;
 }
 
-.egg-option {
+.resultado {
+  width: 150px;
+}
+/* #pokemon,
+#showpokemons {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.topnav .icon {
+  display: none;
+}
+.lni-menu {
+  font-size: 20px;
+  display: none;
+}
+
+.name {
+  margin-top: 20px;
 }
 .type {
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-.egg-km {
-  /* justify-content: center;
-  display: flex; */
-  font-size: 26px;
-  font-weight: 700;
-}
-#km-2 {
-  color: #96B46C;
-}
-
-#km-5 {
-  color: #D39738;
-}
-#km-10 {
-  color: #8A7CC8;
 }
 
 .btn-resultado {
@@ -158,45 +192,15 @@ cursor: pointer;
   font-size: 16px;
   border-radius: 8px;
   border-color: #08224e;
-  cursor: pointer;
   margin-top: 10px;
 }
-.incubadora {
-  cursor: pointer;
-  height: 100px;
-}
+ */
 
-.topnav {
-  overflow: hidden;
-  background: linear-gradient(to bottom, #243a7b 0%, #1d56a3 100%);
-  float: right;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background: linear-gradient(to bottom, #243a7b 0%, #cc3300 100%);
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
+/* 
+@media screen and (max-width: 1000px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -204,10 +208,10 @@ cursor: pointer;
   body {
     text-align: center;
   }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -217,4 +221,4 @@ cursor: pointer;
     float: none;
     display: block;
   }
-}
+} */
