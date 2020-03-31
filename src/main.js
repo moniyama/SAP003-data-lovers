@@ -1,8 +1,6 @@
 // color das navs/tabs
 const removeColors = () => {
-  document
-    .getElementById("main")
-    .classList.remove("blue", "yellow", "red", "green");
+  document.getElementById("main").classList.remove("blue", "yellow", "red", "green");
   tablink.forEach(tabs => {
     tabs.classList.remove("blue", "yellow", "red", "green");
     tabs.classList.add("inherit");
@@ -18,9 +16,7 @@ const removeAllContent = () => {
 
 const showCurrentTab = e => {
   document.getElementById("main").classList.add(e.currentTarget.dataset.color);
-  document
-    .getElementById(e.currentTarget.dataset.page)
-    .classList.add("show-tab");
+  document.getElementById(e.currentTarget.dataset.page).classList.add("show-tab");
   e.currentTarget.classList.replace("inherit", e.currentTarget.dataset.color);
 };
 
@@ -85,18 +81,18 @@ document.getElementById("calcular").addEventListener("click", event => {
     <h4>Incubadora Normal </h4>
     <img class="incubadora" src="./imagens/incubadoralimitada.png" alt="Incubadora Normal"/>
     <p class="margin-none">Aproximadamente</p> <p> ${
-      Array.isArray(tempoNormal)
-        ? tempoNormal[0] + " semanas e " + tempoNormal[1] + " dias"
-        : tempoNormal + (tempoNormal === 1 ? " dia" : " dias")
-    } </p>
+  Array.isArray(tempoNormal)
+    ? tempoNormal[0] + " semanas e " + tempoNormal[1] + " dias"
+    : tempoNormal + (tempoNormal === 1 ? " dia" : " dias")
+} </p>
     <h4>Incubadora Super</h4>
     <img class="incubadora" src="./imagens/superincubadora.png" alt="Incubadora Normal"/>
     <p class="margin-none">Aproximadamente</p>
     <p > ${
-      Array.isArray(tempoSuper)
-        ? tempoSuper[0] + " semanas e " + tempoSuper[1] + " dias"
-        : tempoSuper + (tempoSuper === 1 ? " dia" : " dias")
-    }`;
+  Array.isArray(tempoSuper)
+    ? tempoSuper[0] + " semanas e " + tempoSuper[1] + " dias"
+    : tempoSuper + (tempoSuper === 1 ? " dia" : " dias")
+}`;
   }
 });
 
